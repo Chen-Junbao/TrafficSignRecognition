@@ -47,6 +47,8 @@ def load_data():
 	return np.array(X_train), np.array(y_train), np.array(X_test), np.array(y_test)
 
 
+set_config()
+
 X_train, y_train, X_test, y_test = load_data()
 
 batch_size = 128
