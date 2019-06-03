@@ -219,28 +219,7 @@
 				<div class="w3l-welcome-info">
 					<div class="col-sm-6 welcome-grids">
 						<div class="welcome-img">
-							<form action="http://localhost:5000/predict" method="POST" enctype="multipart/form-data">
-								<input id="file" name="file" onchange="previewInputImage(this)" type="file" / >
-								<input type="submit"></input>
-								<img src="" id="show" width="200" />
-							</form>
-							<script>
-								function previewInputImage(obj) {
-									var newsrc = getObjectURL(obj.files[0]);
-									document.getElementById('show').src = newsrc;
-								}
-								function getObjectURL(file) {
-									var url = null;
-									if (window.createObjectURL != undefined) { // basic
-										url = window.createObjectURL(file);
-									} else if (window.URL != undefined) { // mozilla(firefox)
-										url = window.URL.createObjectURL(file);
-									} else if (window.webkitURL != undefined) { // webkit or chrome
-										url = window.webkitURL.createObjectURL(file);
-									}
-									return url;
-								}
-							</script>
+							{{result}}
 						</div>
 					</div>
 				</div>
