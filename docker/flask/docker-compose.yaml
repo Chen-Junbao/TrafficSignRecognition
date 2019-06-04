@@ -1,0 +1,6 @@
+version: '3'
+services:
+  my_flask:
+    image: my_flask:1.0
+    ports:
+      - "80:5000"

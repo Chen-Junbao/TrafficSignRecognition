@@ -6,12 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="" />
+	<style>
+		body{font-family:"微软雅黑";font-size:14px;}
+		.wrapper{width:800px;margin-right:auto;margin-left:auto;}
+	</style>
 	<script
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!-- bootstrap-css -->
 	<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<!--// bootstrap-css -->
 	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="/static/css/upload.css">
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
 	<!--// css -->
 	<link rel="stylesheet" href="/static/css/lightbox.css">
@@ -35,6 +40,7 @@
 			});
 		});
 	</script>
+	<script src="/static/js/upload.js"></script>
 	<script>
 		$(document).ready(function () {
 			$("#owl-demo").owlCarousel({
@@ -172,8 +178,10 @@
 							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 								<nav>
 									<ul class="nav navbar-nav">
-										<li class="active"><a href="upload.html">Home</a></li>
+										<li class="active"><a href="index.html">Home</a></li>
 										<li><a href="#welcome" class="scroll">Use it</a></li>
+										<li><a href="#services" class="scroll">Show</a></li>
+										<li><a href="#team" class="scroll">Team</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -219,10 +227,26 @@
 				<div class="w3l-welcome-info">
 					<div class="col-sm-6 welcome-grids">
 						<div class="welcome-img">
-							<form action="http://localhost:5000/predict" method="POST" enctype="multipart/form-data">
-								<input id="file" name="file" onchange="previewInputImage(this)" type="file" / >
-								<input type="submit"></input>
-								<img src="" id="show" width="200" />
+							<form action="/predict" method="POST" enctype="multipart/form-data">
+
+								<div class="w3l-welcome-info" style="text-align: center">
+								<a class="file" >上传文件
+								<input id="file" name="file" onchange="previewInputImage(this)" type="file" />
+								</a>
+								</div>
+
+
+								<div class="w3l-welcome-info" style="text-align: center">
+								<img src="" id="show" width="200" align="middle" />
+								</div>
+
+								<div class="w3l-welcome-info" style="text-align: center">
+								<a class="file">提交
+									<input type="submit"></input>
+								</a>
+									</div>
+
+							<img src="" id="show" width="400" />
 							</form>
 							<script>
 								function previewInputImage(obj) {

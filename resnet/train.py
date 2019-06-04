@@ -26,7 +26,7 @@ def load_data():
 	y_test = []
 
 	# Load training data
-	path = "data/train/"
+	path = "../data/train/"
 	dirs = os.listdir(path)
 	for dir in dirs:
 		images = os.listdir(path + dir)
@@ -35,8 +35,8 @@ def load_data():
 			y_train.append(int(dir))
 
 	# Load test data
-	path = "data/test/"
-	with open("data/test.txt") as f:
+	path = "../data/test/"
+	with open("../data/test.txt") as f:
 		info = f.readline()
 		while info:
 			info = info.strip().split(' ')
