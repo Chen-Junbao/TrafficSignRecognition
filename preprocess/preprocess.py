@@ -17,7 +17,7 @@ def preprocess(path):
 	return dst
 
 
-def exec(path):
+def preprocess_exec(path):
 	"""
 	Get all images, preprocess them and overwrite them.
 	:param path: Dataset path
@@ -27,11 +27,7 @@ def exec(path):
 	for file in filelist:
 		filepath = os.path.join(path, file)
 		if os.path.isdir(filepath):
-			exec(filepath)
+			preprocess_exec(filepath)
 		else:
 			image = preprocess(filepath)
 			cv2.imwrite(filepath, image)
-
-
-if __name__ == "__main__":
-	exec(sys.argv[1])

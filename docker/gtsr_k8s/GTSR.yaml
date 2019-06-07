@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gtsr
+spec:
+  selector:
+    matchLabels:
+      run: gtsr
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        run: gtsr
+    spec:
+      containers:
+      - name: gtsr
+        image: gtsr:1.0
+        ports:
+        - containerPort: 5000

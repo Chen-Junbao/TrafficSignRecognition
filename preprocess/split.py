@@ -14,7 +14,7 @@ def split():
 		else:
 			prefix = '000'
 		# make corresponding directories before run it
-		shutil.move('/ori_data/train/' + prefix + str(i), '/data/train/split' + str(split_number))
+		shutil.move('/data/train/' + prefix + str(i), '/data/train/split' + str(split_number))
 		if i != 0 and i % 6 == 0:
 			split_number += 1
 
@@ -32,10 +32,10 @@ def restore():
 		else:
 			prefix = '/000'
 		# make corresponding directories before run it
-		shutil.move('./data/train/split' + str(split_number) + prefix + str(i), './data/train/')
+		shutil.move('/data/train/split' + str(split_number) + prefix + str(i), '/data/train/')
 		if i != 0 and i % 6 == 0:
 			# Delete split directories
-			shutil.rmtree('./data/train/split' + str(split_number))
+			shutil.rmtree('/data/train/split' + str(split_number))
 			split_number += 1
 
 

@@ -6,7 +6,7 @@ import os
 import numpy as np
 import cv2
 import tensorflow as tf
-import ResNet
+from resnet import ResNet
 
 
 def set_config():
@@ -51,9 +51,9 @@ set_config()
 
 X_train, y_train, X_test, y_test = load_data()
 
-batch_size = 128
+batch_size = 512
 class_number = 43
-epoch = 10
+epoch = 5
 
 img_rows, img_cols = 48, 48
 img_channels = 3
