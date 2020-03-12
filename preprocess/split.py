@@ -4,7 +4,7 @@ import shutil
 def split():
 	"""
 	Split the dataset
-	:return: 7 slices
+	:return: 9 slices
 	"""
 	prefix = '000'
 	split_number = 0
@@ -15,7 +15,7 @@ def split():
 			prefix = '000'
 		# make corresponding directories before run it
 		shutil.move('/data/train/' + prefix + str(i), '/data/train/split' + str(split_number))
-		if i != 0 and i % 6 == 0:
+		if i != 0 and i % 5 == 0:
 			split_number += 1
 
 
@@ -33,7 +33,7 @@ def restore():
 			prefix = '/000'
 		# make corresponding directories before run it
 		shutil.move('/data/train/split' + str(split_number) + prefix + str(i), '/data/train/')
-		if i != 0 and i % 6 == 0:
+		if i != 0 and i % 5 == 0:
 			# Delete split directories
 			shutil.rmtree('/data/train/split' + str(split_number))
 			split_number += 1

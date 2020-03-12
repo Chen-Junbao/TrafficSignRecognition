@@ -1,36 +1,38 @@
 version: '3'
 services:
-  preprocess_image_1:
+  preprocess_image_0:
     image: gtsr_preprocess:1.0
     volumes:
     - /data/train/split0:/usr/GTSR/data
-
-  preprocess_image_2:
+  preprocess_image_1:
     image: gtsr_preprocess:1.0
     volumes:
     - /data/train/split1:/usr/GTSR/data
-
-  preprocess_image_3:
+  preprocess_image_2:
     image: gtsr_preprocess:1.0
     volumes:
     - /data/train/split2:/usr/GTSR/data
-
-  preprocess_image_4:
+  preprocess_image_3:
     image: gtsr_preprocess:1.0
     volumes:
     - /data/train/split3:/usr/GTSR/data
-
+  preprocess_image_4:
+    image: gtsr_preprocess:1.0
+    volumes:
+    - /data/train/split4:/usr/GTSR/data
   preprocess_image_5:
     image: gtsr_preprocess:1.0
     volumes:
-      - /data/train/split4:/usr/GTSR/data
-
+    - /data/train/split5:/usr/GTSR/data
   preprocess_image_6:
     image: gtsr_preprocess:1.0
     volumes:
-      - /data/train/split5:/usr/GTSR/data
-
+    - /data/train/split6:/usr/GTSR/data
   preprocess_image_7:
     image: gtsr_preprocess:1.0
     volumes:
-      - /data/train/split6:/usr/GTSR/data
+    - /data/train/split7:/usr/GTSR/data
+  preprocess_image_8:
+    image: gtsr_preprocess:1.0
+    volumes:
+    - /data/train/split8:/usr/GTSR/data
